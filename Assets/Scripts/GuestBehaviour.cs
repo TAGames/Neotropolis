@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GuestBehaviour : MonoBehaviour {
 
     GameObject waiterGame;
-    Transform chair;
+    Transform chair = null;
+    Vector3 exitPos;
+    NavMeshAgent agent;
     public string food = "I Am Error";
     int points = 10;
     float speed = 0.05f;
@@ -25,8 +28,10 @@ public class GuestBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start () {
         waiterGame = GameObject.Find("WaiterGame");
+        agent = GetComponent<NavMeshAgent>();
         StartCoroutine("FSM");
-	}
+        agent.SetDestination(chair.position);
+    }
     void SetFood(string food) //Set At spawn by WaiterGame
     {
         this.food = food;
@@ -34,6 +39,7 @@ public class GuestBehaviour : MonoBehaviour {
     void SetChair(Transform destination)
     {
         chair = destination;
+        exitPos = this.transform.position;
     }
 
 
@@ -63,29 +69,6 @@ public class GuestBehaviour : MonoBehaviour {
     void Waiting()
     {
         timer += Time.deltaTime;
-        /*
-        if(this.transform != chair)
-        {
-            if(transform.position.x < chair.position.x)
-            {
-                transform.position += new Vector3(speed, 0, 0);
-            }
-            else if(transform.position.x > chair.position.x)
-            {
-                transform.position -= new Vector3(speed, 0, 0);
-            }
-            else if (transform.position.y < chair.position.y)
-            {
-                transform.position += new Vector3(0, speed, 0);
-            }
-            else if (transform.position.y > chair.position.y)
-            {
-                transform.position -= new Vector3(0, speed, 0);
-            }
-         
-        }
-        */
-        //Debug.Log();
         if(timer >= endOfWaiting)
         {
             timer = 0;
@@ -111,6 +94,6 @@ public class GuestBehaviour : MonoBehaviour {
     }
     void Exit()
     {
-
+        agent.SetDestination(exitPos);
     }
 }

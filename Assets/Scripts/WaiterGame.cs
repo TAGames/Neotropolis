@@ -7,12 +7,11 @@ public class WaiterGame : MonoBehaviour
     public GameObject GuestPrefab;
     public Transform Spawnpoint;
     List<string> guestList = new List<string>();
-    string[] FoodArray = { "Kartoffel Ramus", "Käse"};
+    string[] foodArray = { "Kartoffel Ramus", "Käse"};
     public Transform[] chairArray;
     // Use this for initialization
     void Start()
     {
-        Physics.gravity = new Vector3(0, 0, -0.1f);
         spawnGuest();
     }
 
@@ -25,8 +24,8 @@ public class WaiterGame : MonoBehaviour
     void spawnGuest()
     {
        GameObject Guest = Instantiate(GuestPrefab, Spawnpoint);
-        Guest.SendMessage("SetFood", FoodArray[(int)Random.Range(0, FoodArray.Length)]);
-        Guest.SendMessage("SetChair", chairArray[0]);
+        Guest.SendMessage("SetFood", foodArray[(int)Random.Range(0, foodArray.Length)]);
+        Guest.SendMessage("SetChair", chairArray[(int)Random.Range(0, chairArray.Length)]);
     }
 
 }
