@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class GuestBehaviour : MonoBehaviour {
 
     GameObject waiterGame;
+    GameObject speechBubble;
+    Text text;
     Transform chair = null;
     Vector3 exitPos;
     NavMeshAgent agent;
@@ -31,6 +34,8 @@ public class GuestBehaviour : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         StartCoroutine("FSM");
         agent.SetDestination(chair.position);
+        speechBubble = this.transform.GetChild(0).gameObject;
+        text = speechBubble.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject.GetComponent<Text>();
     }
     void SetFood(string food) //Set At spawn by WaiterGame
     {
@@ -42,6 +47,31 @@ public class GuestBehaviour : MonoBehaviour {
         exitPos = this.transform.position;
     }
 
+    void OnTriggerStay(Collider coll)
+    {
+        if(coll.gameObject == GameObject.FindGameObjectWithTag("Player"))
+        {
+            if (Input.GetKey(KeyCode.T))
+            {
+                Talk();
+            }
+        }
+    }
+    void OnTriggerExit(Collider coll)
+    {
+        if (coll.gameObject == GameObject.FindGameObjectWithTag("Player"))
+        {
+            speechBubble.SetActive(false);
+        }
+    }
+    void Talk()
+    {
+        speechBubble.SetActive(true);
+        Debug.Log("lol2");
+        speechBubble.transform.LookAt(new Vector3(speechBubble.transform.position.x, speechBubble.transform.position.y + 5, this.transform.position.z - 10));
+        speechBubble.transform.Rotate(new Vector3(0,180,0));
+        text.text = "Einmal " + food + ", bitte";
+    }
 
     IEnumerator FSM() //Finite State Machine
     {
