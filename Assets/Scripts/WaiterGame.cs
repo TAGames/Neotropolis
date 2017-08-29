@@ -8,7 +8,12 @@ public class WaiterGame : Interactable
     public GameObject GuestPrefab;
     public Transform Spawnpoint;
     public GameObject speechBubble;
+    public GameObject selectMenu;
     Text text;
+
+    public string[] dialogue;
+    public string npcName;
+
     List<string> guestList = new List<string>();
     string[] foodArray = { "Kartoffel Ramus", "Käse"};
     public Transform[] chairArray;
@@ -35,7 +40,9 @@ public class WaiterGame : Interactable
     public override void Interact()
     {
         base.Interact();
-        speechBubble.SetActive(true);
-        text.text = "what did ya buying?";
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Character3DController>().enabled = false;
+        DialogueSystem.Instance.AddNewDialogue(dialogue, npcName);
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Character3DController>().enabled = true;
     }
 }

@@ -69,8 +69,8 @@ public class GuestBehaviour : Interactable {
         {
             if (agent.remainingDistance <= agent.stoppingDistance && (state == State.Order))
             {
-                speechBubble.SetActive(true);
-                text.text = "Einmal " + food + ", bitte";
+                string[] talking = new string[] { "Einmal " + food + ", bitte" };
+                DialogueSystem.Instance.AddNewDialogue(talking, "Guest");
                 state = State.WaitFood;
             }
         }

@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour {
     {
         if (coll.gameObject == GameObject.FindGameObjectWithTag("Player"))
         {
-            if (Input.GetKey(KeyCode.T))
+            if (Input.GetButton("Fire1"))
             {
                 Interact();
             }
@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour {
     {
         if (coll.gameObject == GameObject.FindGameObjectWithTag("Player"))
         {
-            if (Input.GetKey(KeyCode.T))
+            if (Input.GetButton("Fire1"))
             {
                 Interact();
             }
