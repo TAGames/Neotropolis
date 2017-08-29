@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class WaiterGame : MonoBehaviour
+public class WaiterGame : Interactable
 {
     public GameObject GuestPrefab;
     public Transform Spawnpoint;
-    public GameObject[] Speechbubbles;
+    public GameObject speechBubble;
+    Text text;
     List<string> guestList = new List<string>();
     string[] foodArray = { "Kartoffel Ramus", "Käse"};
     public Transform[] chairArray;
     // Use this for initialization
     void Start()
     {
-        spawnGuest();
+        text = speechBubble.transform.GetChild(0).gameObject.GetComponent<Text>();
+        SpawnGuest();
     }
 
     // Update is called once per frame
@@ -22,13 +25,17 @@ public class WaiterGame : MonoBehaviour
 
     }
 
-    void spawnGuest()
+    void SpawnGuest()
     {
-        int chair = (int)Random.Range(0, chairArray.Length);
         GameObject Guest = Instantiate(GuestPrefab, Spawnpoint);
         Guest.SendMessage("SetFood", foodArray[(int)Random.Range(0, foodArray.Length)]);
-        Guest.SendMessage("SetChair", chairArray[chair]);
-        Guest.SendMessage("SetBubble", Speechbubbles[chair]);
+        Guest.SendMessage("SetChair", chairArray[(int)Random.Range(0, chairArray.Length)]);
+        Guest.SendMessage("SetBubble", speechBubble);
     }
-
+    public override void Interact()
+    {
+        base.Interact();
+        speechBubble.SetActive(true);
+        text.text = "what did ya buying?";
+    }
 }

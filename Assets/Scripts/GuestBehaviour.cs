@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class GuestBehaviour : MonoBehaviour {
+public class GuestBehaviour : Interactable {
 
     GameObject waiterGame;
     GameObject speechBubble;
@@ -51,18 +51,10 @@ public class GuestBehaviour : MonoBehaviour {
         text = speechBubble.transform.GetChild(0).gameObject.GetComponent<Text>();
     }
 
-    void OnTriggerStay(Collider coll)
+    public override void Interact()
     {
-        if(coll.gameObject == GameObject.FindGameObjectWithTag("Player") && !(agent.pathPending))
-        {
-            if(agent.remainingDistance <= agent.stoppingDistance && (state == State.Order))
-            {
-                if (Input.GetKey(KeyCode.T))
-                {
-                    Talk();
-                }
-            }
-        }
+        base.Interact();
+        Talk();
     }
     void OnTriggerExit(Collider coll)
     {
@@ -73,9 +65,16 @@ public class GuestBehaviour : MonoBehaviour {
     }
     void Talk()
     {
-        speechBubble.SetActive(true);
-
-        text.text = "Einmal " + food + ", bitte";
+        if (!agent.pathPending)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance && (state == State.Order))
+            {
+                speechBubble.SetActive(true);
+                text.text = "Einmal " + food + ", bitte";
+                state = State.WaitFood;
+            }
+        }
+            
     }
 
     IEnumerator FSM() //Finite State Machine
@@ -122,7 +121,7 @@ public class GuestBehaviour : MonoBehaviour {
 
         if(timer >= 20)
         {
-            Debug.Log("Angry Guest");
+            Debug.Log("Angry Guest2");
         }
     }
     void Exit()
