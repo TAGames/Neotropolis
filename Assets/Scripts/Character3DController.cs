@@ -9,6 +9,7 @@ public class Character3DController : MonoBehaviour {
     public float speed = 6.0F;
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
+    [HideInInspector]public bool allowMovement = true;
     private Vector3 moveDirection = Vector3.zero;
 
     CharacterController controller;
@@ -23,16 +24,20 @@ public class Character3DController : MonoBehaviour {
 	}
     void Movement()
     {
-        if (controller.isGrounded)
+        if (allowMovement)
         {
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;
-            if (Input.GetButton("Jump") && jumpAllowed)
-                moveDirection.y = jumpSpeed;
+            if (controller.isGrounded)
+            {
+                moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+                moveDirection = transform.TransformDirection(moveDirection);
+                moveDirection *= speed;
+                if (Input.GetButton("Jump") && jumpAllowed)
+                    moveDirection.y = jumpSpeed;
 
+            }
+            moveDirection.y -= gravity * Time.deltaTime;
+            controller.Move(moveDirection * Time.deltaTime);
         }
-        moveDirection.y -= gravity * Time.deltaTime;
-        controller.Move(moveDirection * Time.deltaTime);
+        
     }
 }

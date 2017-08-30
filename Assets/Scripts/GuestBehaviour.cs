@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GuestBehaviour : Interactable {
 
-    GameObject waiterGame;
     GameObject speechBubble;
     Text text;
     Transform chair;
@@ -20,6 +19,8 @@ public class GuestBehaviour : Interactable {
     public bool alive = true;
     public State state;
 
+    bool angry1, angry2;
+
     public enum State
     {
         Waiting,
@@ -30,10 +31,11 @@ public class GuestBehaviour : Interactable {
 
     // Use this for initialization
     void Start () {
-        waiterGame = GameObject.Find("WaiterGame");
         agent = GetComponent<NavMeshAgent>();
         StartCoroutine("FSM");
         agent.SetDestination(chair.position);
+        angry1 = false;
+        angry2 = false;
         
     }
     void SetFood(string food) //Set At spawn by WaiterGame
@@ -61,20 +63,62 @@ public class GuestBehaviour : Interactable {
         if (coll.gameObject == GameObject.FindGameObjectWithTag("Player"))
         {
             speechBubble.SetActive(false);
+            DialogueSystem.Instance.CloseDialogue();
         }
     }
     void Talk()
     {
         if (!agent.pathPending)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance && (state == State.Order))
+            if (agent.remainingDistance <= agent.stoppingDistance)
             {
-                string[] talking = new string[] { "Einmal " + food + ", bitte" };
-                DialogueSystem.Instance.AddNewDialogue(talking, "Guest");
-                state = State.WaitFood;
+                if(state == State.Order)
+                {
+                    string[] talking = new string[] { "Einmal " + food + ", bitte" };
+                    DialogueSystem.Instance.AddNewDialogue(talking, "Guest");
+                    state = State.WaitFood;
+                }
+                else if(state == State.WaitFood)
+                {
+                    if (WaiterGame.Instance.playerCarriedFood == food)
+                    {
+                        string[] talking = new string[] {"Ah! " + food + "! Yummy!"};
+                        DialogueSystem.Instance.AddNewDialogue(talking, "Guest");
+                        WaiterGame.Instance.playerCarriedFood = "";
+                        WaiterGame.Instance.points += ComputePoints();
+                        state = State.Exit;
+                    }
+                    else if(WaiterGame.Instance.playerCarriedFood == "")
+                    {
+                        string[] talking = new string[] { "You don't carry any food" };
+                        DialogueSystem.Instance.AddNewDialogue(talking, "Guest");
+                    }
+                    else
+                    {
+                        string[] talking = new string[] { "I Ordered: " + food + "!" };
+                        DialogueSystem.Instance.AddNewDialogue(talking, "Guest");
+                    }
+                }
             }
         }
             
+    }
+
+    int ComputePoints()
+    {
+        if (angry1 && !angry2)
+        {
+            points -= 2;
+        }
+        else if(!angry1 && angry2)
+        {
+            points -= 5;
+        }
+        else
+        {
+            points -= 8;
+        }
+        return points;
     }
 
     IEnumerator FSM() //Finite State Machine
@@ -112,7 +156,7 @@ public class GuestBehaviour : Interactable {
         timer += Time.deltaTime;
         if(timer >= 10)
         {
-            Debug.Log("Angry Guest");
+            angry1 = true;
         }
     }
     void WaitFood()
@@ -121,8 +165,9 @@ public class GuestBehaviour : Interactable {
 
         if(timer >= 20)
         {
-            Debug.Log("Angry Guest2");
+            angry2 = true;
         }
+
     }
     void Exit()
     {

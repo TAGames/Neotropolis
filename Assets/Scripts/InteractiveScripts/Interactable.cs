@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour {
 
+    bool oneTimeOnly = true;
+
     void OnTriggerStay(Collider coll)
     {
         if (coll.gameObject == GameObject.FindGameObjectWithTag("Player"))
         {
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
             {
-                Interact();
+                if (oneTimeOnly)
+                {
+                    StartCoroutine(BlockInteraction());
+                    Interact();
+                    oneTimeOnly = false;
+                }
+                
             }
         }
     }
@@ -18,13 +26,17 @@ public class Interactable : MonoBehaviour {
     {
         if (coll.gameObject == GameObject.FindGameObjectWithTag("Player"))
         {
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 Interact();
             }
         }
     }
-
+    IEnumerator BlockInteraction()
+    {
+        yield return new WaitForSeconds(2);
+        oneTimeOnly = true;
+    }
 
     public virtual void Interact()
     {

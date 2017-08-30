@@ -14,12 +14,27 @@ public class WaiterGame : Interactable
     public string[] dialogue;
     public string npcName;
 
+    public int points = 0;
+
     List<string> guestList = new List<string>();
     string[] foodArray = { "Kartoffel Ramus", "Käse"};
     public Transform[] chairArray;
+
+    public string playerCarriedFood;
+
+    public static WaiterGame Instance { get; set; }
+
     // Use this for initialization
     void Start()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
         text = speechBubble.transform.GetChild(0).gameObject.GetComponent<Text>();
         SpawnGuest();
     }
@@ -40,9 +55,24 @@ public class WaiterGame : Interactable
     public override void Interact()
     {
         base.Interact();
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Character3DController>().enabled = false;
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<Character3DController>().enabled = false;
         DialogueSystem.Instance.AddNewDialogue(dialogue, npcName);
-
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Character3DController>().enabled = true;
+        createChoices();
+        DialogueSystem.Instance.DisableContinue();
+        DialogueSystem.Instance.HighlightButton();
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<Character3DController>().enabled = true;
+    }
+    void createChoices()
+    {
+        for(int i = 0; i < foodArray.Length; i++)
+        {
+            string foodname = foodArray[i];
+            DialogueSystem.Instance.AddChoice(foodname, () => { GiveOrder(foodname); });
+        }
+    }
+    void GiveOrder(string food)
+    {
+        playerCarriedFood = food;
+        DialogueSystem.Instance.CloseDialogue();
     }
 }
