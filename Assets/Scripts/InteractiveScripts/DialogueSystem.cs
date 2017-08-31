@@ -21,6 +21,8 @@ public class DialogueSystem : MonoBehaviour {
     Text dialogueText, nameText;
     int dialogueIndex;
     GameObject choiceContentPanel;
+    GameObject scrollVertiGO;
+    Scrollbar scrollbarVerti;
 
     public List<string> dialogueLines = new List<string>();
     
@@ -29,6 +31,8 @@ public class DialogueSystem : MonoBehaviour {
         dialogueText = dialoguePanel.transform.GetChild(1).GetComponent<Text>();
         nameText = dialoguePanel.transform.GetChild(2).GetChild(0).GetComponent<Text>();
         continueButton.onClick.AddListener(delegate { ContinueDialogue(); });
+        scrollVertiGO = selectPanel.transform.GetChild(2).gameObject;
+        scrollbarVerti = scrollVertiGO.GetComponent<Scrollbar>();
 
         eventSystem = EventSystem.current;
         dialoguePanel.SetActive(false);
@@ -122,6 +126,7 @@ public class DialogueSystem : MonoBehaviour {
         dialoguePanel.SetActive(false);
         StopStartPlayerMovement(true);
         continueButton.gameObject.SetActive(true);
+        eventSystem.SetSelectedGameObject(null);
     }
 
     public void StopStartPlayerMovement(bool start)
@@ -143,9 +148,9 @@ public class DialogueSystem : MonoBehaviour {
     }
     public void AutoScroll()
     {
-        GameObject scrollVertiGO = selectPanel.transform.GetChild(2).gameObject;
-        Scrollbar scrollbarVerti = scrollVertiGO.GetComponent<Scrollbar>();
-        if (scrollVertiGO.activeSelf)
+        scrollVertiGO = selectPanel.transform.GetChild(2).gameObject;
+        scrollbarVerti = scrollVertiGO.GetComponent<Scrollbar>();
+        if (scrollVertiGO.activeSelf && eventSystem.currentSelectedGameObject != null)
         {
             if(eventSystem.currentSelectedGameObject.transform.position.y < selectPanel.transform.position.y && scrollbarVerti.value > 0)
             {
