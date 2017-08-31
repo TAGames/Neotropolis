@@ -17,7 +17,7 @@ public class WaiterGame : Interactable
     public int points = 0;
 
     List<string> guestList = new List<string>();
-    string[] foodArray = { "Kartoffel Ramus", "Käse", "", "","","","","", "", "", "", "" };
+    string[] foodArray = { "Cheeseburger", "Steak", "Salad", "Tortilla","Steakhouse Burger","Spaghetti","Tortellini","Schnitzel", "Pommes", "Döner", "Lasagne", "Sausage" };
     public Transform[] chairArray;
 
     public string playerCarriedFood;

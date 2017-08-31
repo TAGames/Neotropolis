@@ -152,11 +152,11 @@ public class DialogueSystem : MonoBehaviour {
         scrollbarVerti = scrollVertiGO.GetComponent<Scrollbar>();
         if (scrollVertiGO.activeSelf && eventSystem.currentSelectedGameObject != null)
         {
-            if(eventSystem.currentSelectedGameObject.transform.position.y < selectPanel.transform.position.y && scrollbarVerti.value > 0)
+            if(eventSystem.currentSelectedGameObject.transform.position.y + scrollSpeed < selectPanel.transform.position.y && scrollbarVerti.value > 0)
             {
                 choiceContentPanel.transform.position = new Vector2(choiceContentPanel.transform.position.x, choiceContentPanel.transform.position.y + 1 * scrollSpeed);
             }
-            else if(eventSystem.currentSelectedGameObject.transform.position.y > selectPanel.transform.position.y && scrollbarVerti.value < 1)
+            else if(eventSystem.currentSelectedGameObject.transform.position.y - scrollSpeed > selectPanel.transform.position.y && scrollbarVerti.value < 1)
             {
                 choiceContentPanel.transform.position = new Vector2(choiceContentPanel.transform.position.x, choiceContentPanel.transform.position.y - 1 * scrollSpeed);
             }

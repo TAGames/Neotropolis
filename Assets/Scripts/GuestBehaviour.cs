@@ -74,7 +74,7 @@ public class GuestBehaviour : Interactable {
             {
                 if(state == State.Order)
                 {
-                    string[] talking = new string[] { "Einmal " + food + ", bitte" };
+                    string[] talking = new string[] {food + ", please" };
                     DialogueSystem.Instance.AddNewDialogue(talking, "Guest");
                     state = State.WaitFood;
                 }
