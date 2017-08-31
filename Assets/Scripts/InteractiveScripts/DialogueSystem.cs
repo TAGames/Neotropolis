@@ -13,6 +13,8 @@ public class DialogueSystem : MonoBehaviour {
     public GameObject dialoguePanel;
     public GameObject selectPanel;
     public GameObject buttonPref;
+    public float scrollSpeed = 2f;
+
 
     EventSystem eventSystem;
     Button continueButton;
@@ -45,7 +47,7 @@ public class DialogueSystem : MonoBehaviour {
         {
             Instance = this;
         }
-	}
+    }
 
     public void AddNewDialogue(string[] lines, string npcName)
     {
@@ -138,5 +140,25 @@ public class DialogueSystem : MonoBehaviour {
     public void DisableContinue()
     {
         continueButton.gameObject.SetActive(false);
+    }
+    public void AutoScroll()
+    {
+        GameObject scrollVertiGO = selectPanel.transform.GetChild(2).gameObject;
+        Scrollbar scrollbarVerti = scrollVertiGO.GetComponent<Scrollbar>();
+        if (scrollVertiGO.activeSelf)
+        {
+            if(eventSystem.currentSelectedGameObject.transform.position.y < selectPanel.transform.position.y && scrollbarVerti.value > 0)
+            {
+                choiceContentPanel.transform.position = new Vector2(choiceContentPanel.transform.position.x, choiceContentPanel.transform.position.y + 1 * scrollSpeed);
+            }
+            else if(eventSystem.currentSelectedGameObject.transform.position.y > selectPanel.transform.position.y && scrollbarVerti.value < 1)
+            {
+                choiceContentPanel.transform.position = new Vector2(choiceContentPanel.transform.position.x, choiceContentPanel.transform.position.y - 1 * scrollSpeed);
+            }
+        }
+    }
+    void Update()
+    {
+        AutoScroll();
     }
 }

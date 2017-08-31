@@ -17,7 +17,7 @@ public class WaiterGame : Interactable
     public int points = 0;
 
     List<string> guestList = new List<string>();
-    string[] foodArray = { "Kartoffel Ramus", "Käse"};
+    string[] foodArray = { "Kartoffel Ramus", "Käse", "", "","","","","", "", "", "", "" };
     public Transform[] chairArray;
 
     public string playerCarriedFood;
@@ -75,4 +75,5 @@ public class WaiterGame : Interactable
         playerCarriedFood = food;
         DialogueSystem.Instance.CloseDialogue();
     }
+    
 }
