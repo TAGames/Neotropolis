@@ -15,7 +15,7 @@ public class MoonMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void LateUpdate () {
+	void FixedUpdate () {
 		myTransform.position = new Vector3 ((myTransform.position.x + (0.1f * moonSpeed*Time.deltaTime)) ,myTransform.position.y ,myTransform.position.z );
 		
 	}
