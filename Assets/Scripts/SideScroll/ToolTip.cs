@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*************************************************************
+* Anzeigen eines Prefabs (ToolTip), wenn man Collider entert * 
+*************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,9 +14,9 @@ public class ToolTip : MonoBehaviour {
 
 
 	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log ("test");
+		
 		myObject=Instantiate(myPrefab); 
-		myObject.transform.parent=transform;
+		myObject.transform.SetParent(transform);
 
 		myObject.GetComponentInChildren<Text> ().text = myString;
 

@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*************************************************************
+* Script was das gesammte SlotGame händelt                   * 
+*************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
@@ -43,7 +47,7 @@ public class SlotGame : MonoBehaviour {
 
 		wallet = player.gameObject.GetComponent<PlayerWallet> ();
 		bet= 0; 
-		Debug.Log ("AHSJHAJ");
+
 
 	}
 
