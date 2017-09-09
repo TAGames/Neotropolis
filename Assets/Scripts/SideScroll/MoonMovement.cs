@@ -1,6 +1,6 @@
-﻿/*************************************************************
-* Bewegungsscript für den Mond                               * 
-*************************************************************/
+﻿/*
+* Bewegungsscript für den Mond                               
+*/
 
 using System.Collections;
 using System.Collections.Generic;

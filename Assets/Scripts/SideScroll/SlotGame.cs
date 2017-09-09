@@ -1,6 +1,6 @@
-﻿/*************************************************************
-* Script was das gesammte SlotGame händelt                   * 
-*************************************************************/
+﻿/*
+* Script was das gesammte SlotGame händelt                              
+*/
 
 using System.Collections;
 using System.Collections.Generic;
@@ -8,13 +8,14 @@ using UnityEngine;
 using UnityEngine.UI; 
 
 public class SlotGame : MonoBehaviour {
-
+	
+	[Tooltip("Die teile die wechseln sollen")]
 	public GameObject[] myPlayStones; 
 	public Sprite[] slotSprites;
 	public  PlayerWallet wallet; 
 	public int bet;
 	public int minBet; 
-	public int winMultiFour = 10; 
+	public int winMultiFour  = 10; 
 	public int winMultiTree = 1; 
 	public GameObject betString;
 	public GameObject walletString; 
