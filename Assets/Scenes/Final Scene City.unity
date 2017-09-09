@@ -1283,6 +1283,7 @@ GameObject:
   - component: {fileID: 1208244062}
   - component: {fileID: 1208244061}
   - component: {fileID: 1208244064}
+  - component: {fileID: 1208244065}
   m_Layer: 10
   m_Name: SlotMaschineAutomat
   m_TagString: Untagged
@@ -1428,6 +1429,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myObject: {fileID: 1314206914}
+--- !u!114 &1208244065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1208244058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d947c0fcc5bc84f3d8a61ef3df2bc5ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPrefab: {fileID: 1007260768397436, guid: eb07a24a03e29467b89f419e2fc9414d, type: 2}
+  myString: poo
 --- !u!1 &1303681950
 GameObject:
   m_ObjectHideFlags: 0
