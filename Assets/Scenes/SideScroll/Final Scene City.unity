@@ -6324,7 +6324,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: ee86b35ea48e3422e9297f3130d278cb, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 4
@@ -12452,8 +12452,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b4911ecf657014ff282e1a8f1cdfe1b6, type: 3}
-    m_FontSize: 31
+    m_Font: {fileID: 12800000, guid: ee86b35ea48e3422e9297f3130d278cb, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -12689,7 +12689,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: ee86b35ea48e3422e9297f3130d278cb, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 4
@@ -18714,8 +18714,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b4911ecf657014ff282e1a8f1cdfe1b6, type: 3}
-    m_FontSize: 32
+    m_Font: {fileID: 12800000, guid: ee86b35ea48e3422e9297f3130d278cb, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -20590,8 +20590,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.10137562, y: 0.14656076}
   m_AnchorMax: {x: 0.8812489, y: 0.8534268}
-  m_AnchoredPosition: {x: 1.86754, y: -0.36749983}
-  m_SizeDelta: {x: -16.345001, y: -24.74}
+  m_AnchoredPosition: {x: 5.1, y: -0.36749983}
+  m_SizeDelta: {x: -22.81, y: -24.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555518943
 MonoBehaviour:
@@ -20619,7 +20619,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -26965,7 +26965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17687da8669974c14b53cf2448fedf33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  credits: 100
+  credits: 1000000
 --- !u!1 &2072290999
 GameObject:
   m_ObjectHideFlags: 0
