@@ -7,6 +7,7 @@ public class WaiterGame : Interactable
 {
     public GameObject GuestPrefab;
     public Transform Spawnpoint;
+    public Transform waypoint;
     public GameObject speechBubble;
     public GameObject selectMenu;
     Text text;
@@ -50,6 +51,8 @@ public class WaiterGame : Interactable
         GameObject Guest = Instantiate(GuestPrefab, Spawnpoint);
         Guest.SendMessage("SetFood", foodArray[(int)Random.Range(0, foodArray.Length)]);
         Guest.SendMessage("SetChair", chairArray[(int)Random.Range(0, chairArray.Length)]);
+        Guest.SendMessage("AddWaypoint", waypoint);
+        Guest.SendMessage("SetExit", Spawnpoint);
         Guest.SendMessage("SetBubble", speechBubble);
     }
     public override void Interact()

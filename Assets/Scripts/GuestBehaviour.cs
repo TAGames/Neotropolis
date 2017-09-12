@@ -9,8 +9,8 @@ public class GuestBehaviour : Interactable {
     GameObject speechBubble;
     Text text;
     Transform chair;
-    Vector3 exitPos;
-    NavMeshAgent agent;
+    Transform exitPos;
+    NPCWaypointMovement2D npcMove;
     public string food = "I Am Error";
     int points = 10;
     float speed = 0.05f;
@@ -31,9 +31,9 @@ public class GuestBehaviour : Interactable {
 
     // Use this for initialization
     void Start () {
-        agent = GetComponent<NavMeshAgent>();
+        npcMove = GetComponent<NPCWaypointMovement2D>();
         StartCoroutine("FSM");
-        agent.SetDestination(chair.position);
+        npcMove.goal = chair;
         angry1 = false;
         angry2 = false;
         
@@ -45,7 +45,10 @@ public class GuestBehaviour : Interactable {
     void SetChair(Transform destination)
     {
         chair = destination;
-        exitPos = this.transform.position;
+    }
+    void SetExit(Transform exit)
+    {
+        exitPos = exit;
     }
     void SetBubble(GameObject speechBubble)
     {
@@ -68,9 +71,9 @@ public class GuestBehaviour : Interactable {
     }
     void Talk()
     {
-        if (!agent.pathPending)
+        if (true)//!agent.pathPending)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            if (true)//agent.remainingDistance <= agent.stoppingDistance)
             {
                 if(state == State.Order)
                 {
@@ -146,7 +149,7 @@ public class GuestBehaviour : Interactable {
     //StateMethods
     void Waiting()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance)
+        if (true)//simpleAI.arrived) 
         {
             state = State.Order;
         }
@@ -171,6 +174,6 @@ public class GuestBehaviour : Interactable {
     }
     void Exit()
     {
-        agent.SetDestination(exitPos);
+        npcMove.goal = exitPos;
     }
 }

@@ -5,11 +5,15 @@ using UnityEngine;
 public class CharacterControllerTopView : MonoBehaviour {
 
     public bool canWalk = true;
-    public float speed = 1;
+    public float maxSpeed = 10f;
     Rigidbody2D rb2D;
+    Animator anim;
+    bool facingRight = true;
+    bool facingDown = true;
 	// Use this for initialization
 	void Start () {
         rb2D = transform.GetComponent<Rigidbody2D>();
+        //anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -18,12 +22,26 @@ public class CharacterControllerTopView : MonoBehaviour {
 	}
     void Move()
     {
+        float moveH = Input.GetAxis("Horizontal");
+        float moveV = Input.GetAxis("Vertical");
+
         if (canWalk)
         {
-            if(Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
-            {
-                //rb2D.transform.position = new Vector2(rb2D.transform.position.x, rb2D.transform.position.y * Input.GetAxisRaw("Vertical") * speed);
-            }
+            //anim.SetFloat("Speed", Mathf.Abs(moveH));
+            rb2D.velocity = new Vector2(moveH * maxSpeed, rb2D.velocity.y);
+            rb2D.velocity = new Vector2(rb2D.velocity.x, moveV * maxSpeed);
+
+            if (moveH > 0 && !facingRight)
+                FlipH();
+            else if (moveH < 0 && facingRight)
+                FlipH();
         }
+    }
+    void FlipH()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 }

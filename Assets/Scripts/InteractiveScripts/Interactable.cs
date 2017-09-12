@@ -28,7 +28,9 @@ public class Interactable : MonoBehaviour {
         {
             if (Input.GetButtonDown("Fire1"))
             {
+                StartCoroutine(BlockInteraction());
                 Interact();
+                oneTimeOnly = false;
             }
         }
     }

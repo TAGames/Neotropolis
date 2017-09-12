@@ -132,9 +132,9 @@ public class DialogueSystem : MonoBehaviour {
     public void StopStartPlayerMovement(bool start)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if(player.GetComponent<Character3DController>() != null)
+        if(player.GetComponent<CharacterControllerTopView>() != null)
         {
-            player.GetComponent<Character3DController>().allowMovement = start;
+            player.GetComponent<CharacterControllerTopView>().canWalk = start;
         }
 
     }
