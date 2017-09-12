@@ -71,7 +71,7 @@ public class GuestBehaviour : Interactable {
     }
     void Talk()
     {
-        if (true)//!agent.pathPending)
+        if (true)
         {
             if (true)//agent.remainingDistance <= agent.stoppingDistance)
             {
@@ -152,7 +152,7 @@ public class GuestBehaviour : Interactable {
     //StateMethods
     void Waiting()
     {
-        if (true)//simpleAI.arrived) 
+        if (npcMove.atGoal)//simpleAI.arrived) 
         {
             state = State.Order;
         }

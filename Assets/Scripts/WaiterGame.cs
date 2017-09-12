@@ -21,6 +21,7 @@ public class WaiterGame : Interactable
     List<string> guestList = new List<string>();
     string[] foodArray = { "Cheeseburger", "Steak", "Salad", "Tortilla","Steakhouse Burger","Spaghetti","Tortellini","Schnitzel", "Pommes", "Döner", "Lasagne", "Sausage" };
     public Transform[] chairArray;
+    bool[] freeChair;
 
     public string playerCarriedFood;
 
@@ -39,8 +40,13 @@ public class WaiterGame : Interactable
         }
         text = speechBubble.transform.GetChild(0).gameObject.GetComponent<Text>();
         playing = true;
-        //StartCoroutine(SpawnGuests());
-        SpawnGuest();
+        freeChair = new bool[chairArray.Length];
+        for(int i = 0; i < freeChair.Length; i++)
+        {
+            freeChair[i] = true;
+        }
+        StartCoroutine(SpawnGuests());
+        //SpawnGuest();
     }
 
     // Update is called once per frame
@@ -53,7 +59,9 @@ public class WaiterGame : Interactable
     {
         GameObject Guest = Instantiate(GuestPrefab, Spawnpoint);
         Guest.SendMessage("SetFood", foodArray[(int)Random.Range(0, foodArray.Length)]);
-        Guest.SendMessage("SetChair", chairArray[(int)Random.Range(0, chairArray.Length)]);
+        int chairInt = (int)Random.Range(0, chairArray.Length);
+
+        Guest.SendMessage("SetChair", chairArray[CheckChair(chairInt)]);
         Guest.SendMessage("AddWaypoint", waypoint);
         Guest.SendMessage("SetExit", Spawnpoint);
         Guest.SendMessage("SetBubble", speechBubble);
@@ -81,9 +89,30 @@ public class WaiterGame : Interactable
         playerCarriedFood = food;
         DialogueSystem.Instance.CloseDialogue();
     }
+    int CheckChair(int chairInt) //checks if Chair is Empty
+    {
+        if (freeChair[chairInt])
+        {
+            freeChair[chairInt] = false;
+            return chairInt;
+        }
+        else
+        {
+            if(chairInt == 0)
+            {
+                return CheckChair(freeChair.Length -1);
+            }
+            else
+            {
+                return CheckChair(chairInt - 1);
+            }
+            
+        }
+    }
+
     IEnumerator SpawnGuests()
     {
-        while (playing)
+        for(int i = 0; i < 8; i++)
         {
             Debug.Log("lol");
             yield return new WaitForSeconds(5f);

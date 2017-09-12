@@ -11,10 +11,12 @@ public class NPCWaypointMovement2D : MonoBehaviour {
     public int index = 0;
     private Transform npcTransform;
     public bool firstX;
+    public bool atGoal;
 	// Use this for initialization
 	void Start () {
         npcTransform = GetComponent<Transform>();
         firstX = true;
+        atGoal = false;
 	}
 	
 	// Update is called once per frame
@@ -36,13 +38,17 @@ public class NPCWaypointMovement2D : MonoBehaviour {
             }
             else
             {
-                Debug.Log("Arravied");
                 index++;
             }
         }
         else
         {
             GoToWaypoint(goal);
+            if(npcTransform.position.x < goal.position.x +  range && npcTransform.position.x > goal.position.x - range &&
+                npcTransform.position.y < goal.position.y + range && npcTransform.position.y > goal.position.y - range)
+            {
+                atGoal = true;
+            }
         }
     }
     void GoToWaypoint(Transform waypoint)
