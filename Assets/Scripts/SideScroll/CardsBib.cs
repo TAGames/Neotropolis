@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+
 
 public class CardsBib : MonoBehaviour {
 
@@ -47,7 +47,7 @@ public class CardsBib : MonoBehaviour {
 		Card finalCard;
 		int rndRarity = Random.Range (0, 100);
 		int rndEdition = Random.Range (0, 10);
-		bool special = false; 
+	 
 		List <Card> pickList = cardCollection;
 
 		Debug.Log (rndEdition);
