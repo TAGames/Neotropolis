@@ -30,12 +30,13 @@ public class NPCWaypointMovement2D : MonoBehaviour {
             {
                 GoToWaypoint(waypoints[index]);
             }
-            else if (npcTransform.position.x < waypoints[index].position.y - range || npcTransform.position.y < waypoints[index].position.y - range)
+            else if (npcTransform.position.x < waypoints[index].position.x - range || npcTransform.position.y < waypoints[index].position.y - range)
             {
                 GoToWaypoint(waypoints[index]);
             }
             else
             {
+                Debug.Log("Arravied");
                 index++;
             }
         }
@@ -52,9 +53,9 @@ public class NPCWaypointMovement2D : MonoBehaviour {
             {
                 npcTransform.position += new Vector3(speed, 0, 0);
             }
-            else if (npcTransform.position.x > waypoint.position.x)
+            else if (npcTransform.position.x > waypoint.position.x + range)
             {
-                npcTransform.position -= new Vector3(speed, 0, 0 + range);
+                npcTransform.position -= new Vector3(speed, 0, 0);
             }
             else if (npcTransform.position.y < waypoint.position.y - range)
             {
@@ -79,9 +80,9 @@ public class NPCWaypointMovement2D : MonoBehaviour {
             {
                 npcTransform.position += new Vector3(speed, 0, 0);
             }
-            else if (npcTransform.position.x > waypoint.position.x)
+            else if (npcTransform.position.x > waypoint.position.x + range)
             {
-                npcTransform.position -= new Vector3(speed, 0, 0 + range);
+                npcTransform.position -= new Vector3(speed, 0, 0);
 
             }
         }

@@ -139,6 +139,8 @@ MonoBehaviour:
   goal: {fileID: 0}
   speed: 0.02
   range: 0.05
+  index: 0
+  firstX: 0
 --- !u!114 &114631937496641096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,7 +187,7 @@ SpriteRenderer:
   m_SortingLayerID: -1293844855
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 4b2f41c9961bd4c898ad5db0063af650, type: 3}
+  m_Sprite: {fileID: 21300016, guid: 4b2f41c9961bd4c898ad5db0063af650, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
