@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿/*In diesem Script werden verschiedene Layers in einer 2D umgebung (eigentlich 3D) 
+ * jeh nach Distanz zum Spieler gescrollt um einem Parallax effekt zu erhalten
+ * Wichtig: Entferne Objekte müssen schneller sein, damit sie mit dem Spieler mithalten, 
+ * schnell sieht dann langsam aus, wärend langsam beim bewegen schnell aussieht */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-/* In diesem Script werden verschiedene Layers in einer 2D umgebung (eigentlich 3D) 
-	 * jeh nach Distanz zum Spieler gescrollt um einem Parallax effekt zu erhalten
-     * Wichtig: Entferne Objekte müssen schneller sein, damit sie mit dem Spieler mithalten, 
-     * schnell sieht dann langsam aus, wärend langsam beim bewegen schnell aussieht */
+
 public class Parallax : MonoBehaviour {
 
 

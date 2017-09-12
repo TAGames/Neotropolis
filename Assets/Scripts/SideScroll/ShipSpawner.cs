@@ -1,6 +1,6 @@
-﻿    /**********************************************************************************************************************************
-	 * Script zum Spawnen von kleinen Flug Shiffen, welche mit Random Speed und Höhe entlang der X Achse fliegen 
-	 ************************************************************************************************************************************/
+﻿/*
+* Ein Script, was kleine Raumschiffe spawnt und diese mit den nötigen Components ausstattet                             
+*/
 
 
 using System.Collections;

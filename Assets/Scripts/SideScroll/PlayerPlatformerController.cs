@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*************************************************************************
+* Bewegungsscript für den 2D Sidescroll Spieler, Erbt von PhysicsObject  * 
+*************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,12 +12,6 @@ public class PlayerPlatformerController : PhysicsObject {
 	public float jumpTakeOffSpeed = 7;
 	private SpriteRenderer spriteRenderer;
 
-	void OnTriggerStay2D( Collider2D col) {
-		if (col.gameObject.tag == "PlayerInteract") {
-			col.gameObject.GetComponent<ObjectBehavior> ().interactWithPlayer (this.gameObject);
-
-		}
-	}
 
 
 	protected override void ComputeVelocity()

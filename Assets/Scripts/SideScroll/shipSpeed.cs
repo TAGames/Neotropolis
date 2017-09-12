@@ -1,4 +1,6 @@
-﻿// Ein kleines Script was nur für ShipSpawn da ist und das GO in x  Richtung verschiebt 
+﻿/*
+* Hilfsscript, was die erzeugten Hintergrundships bewegt                              
+*/ 
 
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +9,7 @@ using UnityEngine;
 public class shipSpeed : MonoBehaviour {
 
 	private Transform myTransform;
+
 
 	public  float myShipSpeed;
 

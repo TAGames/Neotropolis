@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*************************************************************
+* Aktiviert das Canvas beim Eintreten in den Collider        * 
+*************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
