@@ -20,7 +20,7 @@ public class CardsBib : MonoBehaviour {
 		cardCollection.Add (new Card ("Thomas", "Legendary", "Normal", 0005));
 		cardCollection.Add (new Card ("Thomas", "Legendary", "Special", 0006));
 
-		for (int i = 1; i<3; i++) {
+		for (int i = 1; i<2; i++) {
 			pickRandomCard ();
 		}
 
@@ -46,42 +46,36 @@ public class CardsBib : MonoBehaviour {
 	public Card pickRandomCard (){
 		Card finalCard;
 		int rndRarity = Random.Range (0, 100);
-		int rndEdition = Random.Range (0, 10);
-		bool special = false; 
+		int rndEdition = Random.Range (0, 10); 
 		List <Card> pickList = cardCollection;
 
-		Debug.Log (rndEdition);
-		Debug.Log (rndRarity);
 
-		foreach (Card bla in cardCollection) {
-			Debug.Log (bla.cardId);
-		}
+
+		Debug.Log (pickList.Count);
+		
 
 		if (rndEdition == 9) {
 			pickList = cardCollection.FindAll( x => x.edition == Card.Edition.Special);
+			Debug.Log (pickList.Count);
+
 		}
 		else {
 			pickList = cardCollection.FindAll( x => x.edition == Card.Edition.Normal);
+			Debug.Log (pickList.Count);
 		}
 
-		switch (rndRarity) {
-		case (0-70):
+		if (rndRarity < 71) {
 			pickList = pickList.FindAll (x => x.rarity == Card.Rarity.Common);
-			break;
-		case (70-90):
+		} else if (rndRarity < 90) {
 			pickList = pickList.FindAll (x => x.rarity == Card.Rarity.Rar);
-			break;
-		case (91-98):
+		} else if (rndRarity > 98) {
 			pickList = pickList.FindAll (x => x.rarity == Card.Rarity.Epic);
-			break;
-		case (99-100):
+		} else {
 			pickList = pickList.FindAll (x => x.rarity == Card.Rarity.Legendary);
-			break;
 		}
 
-		foreach (Card bla in pickList) {
-			Debug.Log (bla.cardId);
-		}
+
+		Debug.Log (pickList.Count);
 
 		finalCard = pickList[Random.Range(0, pickList.Count)];
 		Debug.Log (finalCard.cardId + finalCard.cardName + finalCard.rarity +finalCard.edition);
