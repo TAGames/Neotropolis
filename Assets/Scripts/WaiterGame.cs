@@ -15,6 +15,7 @@ public class WaiterGame : Interactable
     public string[] dialogue;
     public string npcName;
 
+    bool playing;
     public int points = 0;
 
     List<string> guestList = new List<string>();
@@ -37,6 +38,8 @@ public class WaiterGame : Interactable
             Instance = this;
         }
         text = speechBubble.transform.GetChild(0).gameObject.GetComponent<Text>();
+        playing = true;
+        //StartCoroutine(SpawnGuests());
         SpawnGuest();
     }
 
@@ -77,6 +80,16 @@ public class WaiterGame : Interactable
     {
         playerCarriedFood = food;
         DialogueSystem.Instance.CloseDialogue();
+    }
+    IEnumerator SpawnGuests()
+    {
+        while (playing)
+        {
+            Debug.Log("lol");
+            yield return new WaitForSeconds(5f);
+            SpawnGuest();
+        }
+        yield return null;
     }
     
 }

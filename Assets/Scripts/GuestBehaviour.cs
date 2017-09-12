@@ -89,6 +89,9 @@ public class GuestBehaviour : Interactable {
                         DialogueSystem.Instance.AddNewDialogue(talking, "Guest");
                         WaiterGame.Instance.playerCarriedFood = "";
                         WaiterGame.Instance.points += ComputePoints();
+                        npcMove.index = 0;
+                        npcMove.firstX = false;
+                        npcMove.goal = exitPos;
                         state = State.Exit;
                     }
                     else if(WaiterGame.Instance.playerCarriedFood == "")
@@ -174,6 +177,6 @@ public class GuestBehaviour : Interactable {
     }
     void Exit()
     {
-        npcMove.goal = exitPos;
+        
     }
 }
