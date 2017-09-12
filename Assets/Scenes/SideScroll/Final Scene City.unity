@@ -20859,7 +20859,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.08400001, y: 0.04069686}
   m_AnchorMax: {x: 0.26700002, y: 0.61254525}
-  m_AnchoredPosition: {x: 1.8999939, y: 0}
+  m_AnchoredPosition: {x: 1.9000244, y: 0}
   m_SizeDelta: {x: 2.2999878, y: -29.51001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1558720399
@@ -26806,6 +26806,7 @@ GameObject:
   - component: {fileID: 2063451021}
   - component: {fileID: 2063451015}
   - component: {fileID: 2063451014}
+  - component: {fileID: 2063451022}
   m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
@@ -26966,6 +26967,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   credits: 1000000
+--- !u!114 &2063451022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063451013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b276f1a912d6d473a89fb4a666daf6e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardCollection: []
 --- !u!1 &2072290999
 GameObject:
   m_ObjectHideFlags: 0
