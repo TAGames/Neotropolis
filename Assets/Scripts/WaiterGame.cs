@@ -114,7 +114,6 @@ public class WaiterGame : Interactable
     {
         for(int i = 0; i < 8; i++)
         {
-            Debug.Log("lol");
             yield return new WaitForSeconds(5f);
             SpawnGuest();
         }

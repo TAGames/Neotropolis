@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 6883038}
   - component: {fileID: 6883040}
   - component: {fileID: 6883041}
+  - component: {fileID: 6883042}
   m_Layer: 0
   m_Name: WaiterGame
   m_TagString: Untagged
@@ -158,7 +159,7 @@ SpriteRenderer:
   m_SortingLayerID: -1293844855
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 33ea9579c22c241ce940486d2fb680b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27dd1e6656e43884d9484bb0465a0862, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -199,7 +200,7 @@ MonoBehaviour:
   speechBubble: {fileID: 1600603019}
   selectMenu: {fileID: 0}
   dialogue:
-  - What did you need?
+  - What do you need?
   npcName: Chef
   points: 0
   chairArray:
@@ -237,6 +238,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6349139, y: 2.1008615}
   m_EdgeRadius: 0
+--- !u!95 &6883042
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 6883037}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01a3f05583377324ca01ba575f368af1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &47263254
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,8 +404,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -160.3, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &89578524
 MonoBehaviour:
@@ -1430,8 +1448,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 336, y: 70}
-  m_SizeDelta: {x: -658.9, y: -131.3}
+  m_AnchoredPosition: {x: 301.8, y: 70.1}
+  m_SizeDelta: {x: -645.2, y: -126.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898836386
 MonoBehaviour:
@@ -1542,7 +1560,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1780126845}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2182,7 +2200,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 111.649994, y: -304.2}
+  m_AnchoredPosition: {x: 139.75, y: -298.05}
   m_SizeDelta: {x: 199.5, y: 269.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279865293
@@ -2283,7 +2301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 305.7, y: -66.850006}
+  m_AnchoredPosition: {x: 284.3, y: -62.300003}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310939492
@@ -2596,8 +2614,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.4, y: -87.5}
-  m_SizeDelta: {x: -28.6, y: 163.7}
+  m_AnchoredPosition: {x: 4.3, y: -85.9}
+  m_SizeDelta: {x: -71.4, y: 154.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1600603021
 MonoBehaviour:
@@ -2911,7 +2929,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
@@ -2959,8 +2977,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.025, y: 0}
-  m_SizeDelta: {x: 106.4, y: 15.6}
+  m_AnchoredPosition: {x: -0.000040531, y: 0}
+  m_SizeDelta: {x: 83.4, y: 15.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806194255
 MonoBehaviour:
@@ -3084,6 +3102,8 @@ GameObject:
   - component: {fileID: 1904392323}
   - component: {fileID: 1904392326}
   - component: {fileID: 1904392327}
+  - component: {fileID: 1904392328}
+  - component: {fileID: 1904392329}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3194,6 +3214,34 @@ CapsuleCollider2D:
   m_Offset: {x: -0.021945477, y: -0.35276207}
   m_Size: {x: 0.53442955, y: 0.54447585}
   m_Direction: 0
+--- !u!95 &1904392328
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904392322}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0997c4c8b4684c56a54591411ffab41, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1904392329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904392322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc6642d3233a484b83e6a4d5ddc5550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2010048729
 GameObject:
   m_ObjectHideFlags: 0

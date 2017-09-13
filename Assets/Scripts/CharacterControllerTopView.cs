@@ -31,10 +31,10 @@ public class CharacterControllerTopView : MonoBehaviour {
             rb2D.velocity = new Vector2(moveH * maxSpeed, rb2D.velocity.y);
             rb2D.velocity = new Vector2(rb2D.velocity.x, moveV * maxSpeed);
 
-            if (moveH > 0 && !facingRight)
-                FlipH();
-            else if (moveH < 0 && facingRight)
-                FlipH();
+            //if (moveH > 0 && !facingRight)
+                //FlipH();
+            //else if (moveH < 0 && facingRight)
+                //FlipH();
         }
     }
     void FlipH()
