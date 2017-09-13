@@ -11,9 +11,9 @@ public class Card : MonoBehaviour {
 	public Rarity rarity;
 	public Edition edition; 
 	public int cardId; 
+	public string cardInfo;
 
-
-	public Card (string name, string rar, string edi, int id){
+	public Card (string name, string info, string rar, string edi, int id){
 		cardName = name;
 		switch (rar) {
 		case "Common":
@@ -33,6 +33,8 @@ public class Card : MonoBehaviour {
 
 		}
 
+		cardInfo = info;
+
 
 		switch (edi) {
 		case "Normal":
@@ -46,7 +48,8 @@ public class Card : MonoBehaviour {
 		}
 
 		cardId = id;
-		picture = Resources.Load<Sprite> ("Sprites/City/Cards/" + cardName);
+		picture = Resources.Load<Sprite>("Cards/" + name );
+
 
 
 	}

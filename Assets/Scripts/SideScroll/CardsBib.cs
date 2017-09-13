@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
 
 public class CardsBib : MonoBehaviour {
@@ -10,19 +11,21 @@ public class CardsBib : MonoBehaviour {
 
 
 
-
 	// Use this for initialization
 	void Start () {
-		cardCollection.Add (new Card ("Pepe", "Rar", "Normal", 0001));
-		cardCollection.Add (new Card ("Pepe", "Rar", "Special", 0002));
-		cardCollection.Add (new Card ("Alex", "Common", "Normal", 0003));
-		cardCollection.Add (new Card ("Alex", "Common", "Special", 0004));
-		cardCollection.Add (new Card ("Thomas", "Legendary", "Normal", 0005));
-		cardCollection.Add (new Card ("Thomas", "Legendary", "Special", 0006));
+		cardCollection.Add (new Card ("Pepe","ultra lol", "Rar", "Normal", 0001));
+		cardCollection.Add (new Card ("Pepe","ultra lol", "Rar", "Special", 0002));
+		cardCollection.Add (new Card ("Alex", "ultra lol","Common", "Normal", 0003));
+		cardCollection.Add (new Card ("Alex", "ultra lol","Common", "Special", 0004));
+		cardCollection.Add (new Card ("Thomas", "ultra lol","Legendary", "Normal", 0005));
+		cardCollection.Add (new Card ("Thomas", "ultra lol","Legendary", "Special", 0006));
 
 		for (int i = 1; i<2; i++) {
 			pickRandomCard ();
 		}
+
+
+
 
 		}
 
@@ -46,12 +49,12 @@ public class CardsBib : MonoBehaviour {
 	public Card pickRandomCard (){
 		Card finalCard;
 		int rndRarity = Random.Range (0, 100);
-<<<<<<< HEAD
+
 		int rndEdition = Random.Range (0, 10);
 	 
-=======
-		int rndEdition = Random.Range (0, 10); 
->>>>>>> 604475f33d09e71adfa3e30799e9d7fac714b273
+
+ 
+
 		List <Card> pickList = cardCollection;
 
 
