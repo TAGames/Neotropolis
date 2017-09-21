@@ -12,7 +12,7 @@
 	<key>CFBundleExecutable</key>
 	<string>test</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Unity Player version 2017.1.0f3 (472613c02cf7). (c) 2017 Unity Technologies ApS. All rights reserved.</string>
+	<string>Unity Player version 2017.1.1f1 (5d30cf096e79). (c) 2017 Unity Technologies ApS. All rights reserved.</string>
 	<key>CFBundleIconFile</key>
 	<string>PlayerIcon.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -38,7 +38,7 @@
 	<key>NSPrincipalClass</key>
 	<string>PlayerApplication</string>
 	<key>UnityBuildNumber</key>
-	<string>472613c02cf7</string>
+	<string>5d30cf096e79</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.9.0</string>
 </dict>
