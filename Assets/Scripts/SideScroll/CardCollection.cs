@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI; 
 public class CardCollection : MonoBehaviour {
 
-	public List <Card> collection;
+	public List <Card> collection = new List<Card>();
 
 	[Tooltip("Die Canvas, die die Collection darstellen soll")]
 	public GameObject myCollectionCanvas; 
@@ -19,7 +19,7 @@ public class CardCollection : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		myCollectionCanvas.SetActive (false);
-
+	
 
 		collection.Add (new Card ("Pepe", "lol", "Rar", "Normal", 0001));
 		collection.Add (new Card ("Pepe", "ultra lol", "Rar", "Special", 0002));

@@ -366,20 +366,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -395,8 +381,6 @@ GameObject:
   - component: {fileID: 169694713}
   - component: {fileID: 169694717}
   - component: {fileID: 169694716}
-  - component: {fileID: 169694715}
-  - component: {fileID: 169694718}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -459,21 +443,6 @@ Transform:
   m_Father: {fileID: 148533571}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &169694715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 169694712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e61bb7069df604828939b57454bd39ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  elevatorSpeed: 10
-  travelDistance: 10
-  eleSwitch: 0
-  endPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &169694716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +456,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPrefab: {fileID: 1400617138722080, guid: 90fd21ac224cc4ceba4d7486bacc2574, type: 2}
   myString: 'Enter Underground '
+  myFontSize: 7
+  myFont: {fileID: 0}
 --- !u!61 &169694717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -511,31 +482,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1.6875, y: 2.6875}
-  m_EdgeRadius: 0
---- !u!61 &169694718
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 169694712}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.016019583, y: -2.2861686}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6875, y: 2.6875}
-    newSize: {x: 1.6875, y: 2.6875}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.0399404, y: 2.4947977}
   m_EdgeRadius: 0
 --- !u!1 &433927665
 GameObject:
@@ -599,7 +545,6 @@ GameObject:
   m_Component:
   - component: {fileID: 536060435}
   - component: {fileID: 536060436}
-  - component: {fileID: 536060438}
   - component: {fileID: 536060437}
   m_Layer: 0
   m_Name: Boden (1)
@@ -675,7 +620,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.7310414, y: 0}
+  m_Offset: {x: 0.59789586, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -686,32 +631,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.881667, y: 3.6562498}
-  m_EdgeRadius: 0
---- !u!61 &536060438
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 536060434}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -3.0902457, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.34375, y: 3.6562498}
-    newSize: {x: 4.27, y: 1.17}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 7.1632586, y: 3.6562498}
+  m_Size: {x: 12.147959, y: 3.6562498}
   m_EdgeRadius: 0
 --- !u!1 &728360417
 GameObject:
@@ -933,20 +853,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -1047,6 +953,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPrefab: {fileID: 1400617138722080, guid: 90fd21ac224cc4ceba4d7486bacc2574, type: 2}
   myString: Buy Cards
+  myFontSize: 10
+  myFont: {fileID: 12800000, guid: b4911ecf657014ff282e1a8f1cdfe1b6, type: 3}
 --- !u!61 &862728709
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1417,20 +1325,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -1443,8 +1337,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1062550762}
-  - component: {fileID: 1062550766}
-  - component: {fileID: 1062550765}
   - component: {fileID: 1062550764}
   - component: {fileID: 1062550763}
   - component: {fileID: 1062550767}
@@ -1510,30 +1402,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6434937, y: 2.4039402}
   m_EdgeRadius: 0
---- !u!114 &1062550765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1062550761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d947c0fcc5bc84f3d8a61ef3df2bc5ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPrefab: {fileID: 0}
-  myString: 
---- !u!114 &1062550766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1062550761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f3cb1a3c671148c88cc7ac9be2837fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1062550767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1547,6 +1415,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPrefab: {fileID: 1400617138722080, guid: 90fd21ac224cc4ceba4d7486bacc2574, type: 2}
   myString: Enter / Leave
+  myFontSize: 10
+  myFont: {fileID: 12800000, guid: b4911ecf657014ff282e1a8f1cdfe1b6, type: 3}
 --- !u!1 &1086350609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,20 +1478,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -1816,7 +1672,6 @@ GameObject:
   - component: {fileID: 1228633588}
   - component: {fileID: 1228633587}
   - component: {fileID: 1228633586}
-  - component: {fileID: 1228633585}
   - component: {fileID: 1228633584}
   - component: {fileID: 1228633583}
   - component: {fileID: 1228633582}
@@ -1884,18 +1739,6 @@ MonoBehaviour:
   gravityModifier: 10
   maxSpeed: 5
   jumpTakeOffSpeed: 0
---- !u!114 &1228633585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1228633580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17687da8669974c14b53cf2448fedf33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  credits: 1000000
 --- !u!50 &1228633586
 Rigidbody2D:
   serializedVersion: 4
@@ -2323,20 +2166,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -2402,20 +2231,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -2814,20 +2629,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0

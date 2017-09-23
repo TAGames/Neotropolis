@@ -17525,8 +17525,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d947c0fcc5bc84f3d8a61ef3df2bc5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPrefab: {fileID: 1398073453900118, guid: 4ec484e9786744766ac85ee2af13323d, type: 2}
+  myPrefab: {fileID: 1400617138722080, guid: 90fd21ac224cc4ceba4d7486bacc2574, type: 2}
   myString: Press "F" to Play!
+  myFontSize: 7
+  myFont: {fileID: 0}
 --- !u!1 &1214518509
 GameObject:
   m_ObjectHideFlags: 0
@@ -27713,7 +27715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b276f1a912d6d473a89fb4a666daf6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardCollection: []
 --- !u!114 &2063451023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27725,7 +27726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f408dcfa04c458c8bb62113759791a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: []
   myCollectionCanvas: {fileID: 1643116796}
   cardPicture: {fileID: 223738728}
   cardInfoText: {fileID: 950025030}

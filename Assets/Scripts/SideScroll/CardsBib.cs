@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CardsBib : MonoBehaviour {
 
-	public List<Card> cardCollection;
+	public List<Card> cardCollection = new List<Card>();
 
 
 
@@ -19,6 +19,7 @@ public class CardsBib : MonoBehaviour {
 		cardCollection.Add (new Card ("Alex", "ultra lol","Common", "Special", 0004));
 		cardCollection.Add (new Card ("Thomas", "ultra lol","Legendary", "Normal", 0005));
 		cardCollection.Add (new Card ("Thomas", "ultra lol","Legendary", "Special", 0006));
+
 
 		for (int i = 1; i<2; i++) {
 			pickRandomCard ();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour {
+public class Card {
 
 	public string cardName;
 	public Sprite picture; 
@@ -15,7 +15,7 @@ public class Card : MonoBehaviour {
 
 
 
-	// ich teste hier mal bisschen was 
+	// Konstruktor 
 	public Card (string name, string info, string rar, string edi, int id){
 		cardName = name;
 		switch (rar) {
@@ -57,13 +57,5 @@ public class Card : MonoBehaviour {
 
 	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
