@@ -13,6 +13,9 @@ public class Card : MonoBehaviour {
 	public int cardId; 
 	public string cardInfo;
 
+
+
+	// ich teste hier mal bisschen was 
 	public Card (string name, string info, string rar, string edi, int id){
 		cardName = name;
 		switch (rar) {
