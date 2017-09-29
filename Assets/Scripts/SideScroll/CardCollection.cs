@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// Die Aktuelle CardCollection des Spielers 
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 

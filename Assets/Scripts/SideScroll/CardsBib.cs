@@ -60,17 +60,17 @@ public class CardsBib : MonoBehaviour {
 
 
 
-		Debug.Log (pickList.Count);
+		
 		
 
 		if (rndEdition == 9) {
 			pickList = cardCollection.FindAll( x => x.edition == Card.Edition.Special);
-			Debug.Log (pickList.Count);
+			
 
 		}
 		else {
 			pickList = cardCollection.FindAll( x => x.edition == Card.Edition.Normal);
-			Debug.Log (pickList.Count);
+			
 		}
 
 		if (rndRarity < 71) {
@@ -84,10 +84,10 @@ public class CardsBib : MonoBehaviour {
 		}
 
 
-		Debug.Log (pickList.Count);
+		
 
 		finalCard = pickList[Random.Range(0, pickList.Count)];
-		Debug.Log (finalCard.cardId + finalCard.cardName + finalCard.rarity +finalCard.edition);
+		
 
 		return finalCard;
 

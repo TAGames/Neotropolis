@@ -1,6 +1,4 @@
-﻿/*************************************************************
-* Anzeigen eines Prefabs (ToolTip), wenn man Collider entert * 
-*************************************************************/
+﻿// Anzeigen eines Prefabs (ToolTip), mit einem Custom String myString
 
 using System.Collections;
 using System.Collections.Generic;
@@ -25,6 +23,7 @@ public class ToolTip : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D other){
+        Debug.Log("Object destroeyes");
 		Destroy (myObject);
 	}
 }
