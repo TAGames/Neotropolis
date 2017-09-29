@@ -61,7 +61,6 @@ public class PlayerAnimation : MonoBehaviour {
 
 	}
 
-
 	// Use this for initialization
 	void Start () {
 		newTransform = GetComponent<Transform> ();
